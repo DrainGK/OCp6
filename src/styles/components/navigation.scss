@@ -1,0 +1,24 @@
+.navigation{
+    
+    display: flex;
+    justify-content: space-between;
+    width: 95%;
+    margin: 0 auto;
+
+    .logo {
+        margin: 1em;
+    }
+
+    
+    ul{
+        display: flex;
+        width: fit-content;
+
+        li{
+            font-size: 2rem;
+            margin: 1em;
+            color: #FF6060;
+            
+        }
+    }
+}

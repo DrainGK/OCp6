@@ -1,0 +1,54 @@
+.about {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+        
+
+    .section-3-container{
+        display: flex;
+        align-items: left;
+        flex-direction: column;
+        gap: 20px;
+        font-weight: lighter;
+
+        .question-item{
+            background: transparent;
+            margin-bottom: 1rem;
+            padding: 1rem;
+
+        }
+        .question-link{
+            font-size: 1.5rem;
+            color: white;
+            background-color: #FF6060;
+            border-radius: 2px;
+            text-decoration: none;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            }
+
+            .answer{
+                max-height: 0;
+                overflow: hidden;
+                background: transparent;
+                transition: max-height 650ms;
+
+                background-color: #F6F6F6;
+            }
+            .answer p{
+                padding: 2rem;
+                color: #FF6060;
+            }
+
+            .question-item:target .answer{
+                max-height: 20rem;
+            }
+            
+        }
+}
