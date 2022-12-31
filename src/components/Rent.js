@@ -1,10 +1,27 @@
-import { React, useState } from "react";
+import { React, useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import HouseData from "../houseData.json";
+import Footer from "./Footer";
+import Navigation from "./Navigation";
 
-const Rent = ({ rentNumber }) => {
-  const [currentRent] = useState(HouseData[rentNumber]);
-  return (
+const Rent = ({}) => {
+  const [currentRent, setCurrentRent] = useState(HouseData);
+  const params = useParams();
+  const id = params.id;
+
+  const fetchDetails = () => {
+    fetch(`HouseData.json`)
+      .then((res) => res.json())
+      .then((data) => setCurrentRent(data));
+  };
+
+  useEffect(() => {
+    fetchDetails();
+  }, []);
+
+  return (index) => (
     <div className="rent">
+      <Navigation />
       <div className="slider">
         <img src={currentRent.cover} alt={currentRent.title} />
       </div>
@@ -15,7 +32,7 @@ const Rent = ({ rentNumber }) => {
           <p>{currentRent.tags}</p>
         </div>
         <div className="owner">
-          <p>{currentRent.host.name}</p>
+          <p>{currentRent[index].host.name}</p>
           <span>{currentRent.rating}</span>
         </div>
       </div>
@@ -23,6 +40,7 @@ const Rent = ({ rentNumber }) => {
         <div className="description">{currentRent.description}</div>
         <div className="equip">{currentRent.equipments}</div>
       </div>
+      <Footer />
     </div>
   );
 };
