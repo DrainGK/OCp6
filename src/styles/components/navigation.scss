@@ -5,20 +5,38 @@
     width: 95%;
     margin: 0 auto;
 
+    @media only screen and (max-width: 376px){
+        align-items: center;
+    }
+
     .logo {
         margin: 1em;
+
+        @media only screen and (max-width: 376px){
+            transform: scale(0.7);
+            margin: 0;
+        }
     }
 
     
     ul{
         display: flex;
         width: fit-content;
+        @media only screen and (max-width: 376px){
+            padding: 0;
+        }
 
         li{
             font-size: 2rem;
             margin: 1em;
             color: #FF6060;
+
+            @media only screen and (max-width: 376px){
+                font-size: 10px;
+                text-transform: uppercase;
+           }
             
         }
     }
+
 }

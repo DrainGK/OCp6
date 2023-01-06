@@ -1,46 +1,64 @@
-import { React, useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import HouseData from "../houseData.json";
-import Footer from "./Footer";
-import Navigation from "./Navigation";
+import { React, useState } from "react";
+import Slider from "../components/Slider";
+import Dropdown from "../components/Dropdown";
+import Stars from "./Stars";
 
-const Rent = ({}) => {
-  const [currentRent, setCurrentRent] = useState(HouseData);
-  const params = useParams();
-  const id = params.id;
+const Rent = (props) => {
+  const { house } = props;
+  const [equip, setEquip] = useState([house.equipments]);
+  const [tags, setTags] = useState([house.tags]);
 
-  const fetchDetails = () => {
-    fetch(`HouseData.json`)
-      .then((res) => res.json())
-      .then((data) => setCurrentRent(data));
-  };
-
-  useEffect(() => {
-    fetchDetails();
-  }, []);
-
-  return (index) => (
+  return (
     <div className="rent">
-      <Navigation />
-      <div className="slider">
-        <img src={currentRent.cover} alt={currentRent.title} />
+      <div className="title-background">
+        <Slider slides={house.pictures} />
       </div>
       <div className="rent-container">
-        <div className="owner-info">
-          <p>{currentRent.title}</p>
-          <p>{currentRent.location}</p>
-          <p>{currentRent.tags}</p>
+        <div className="house-info">
+          <p className="title">{house.title}</p>
+          <p className="sub-title">{house.location}</p>
+          <div className="tags-container">
+            {tags.map((res, index) => {
+              return (
+                <span className="tags" key={index}>
+                  {res}
+                </span>
+              );
+            })}
+          </div>
         </div>
         <div className="owner">
-          <p>{currentRent[index].host.name}</p>
-          <span>{currentRent.rating}</span>
+          <div className="owner-infos">
+            <p>{house.host.name}</p>
+            <img src={house.host.picture} alt={house.host.name} />
+          </div>
+          <div className="stars-container">
+            <Stars rates={house.rating} />
+          </div>
         </div>
       </div>
       <div className="rent-info">
-        <div className="description">{currentRent.description}</div>
-        <div className="equip">{currentRent.equipments}</div>
+        <div className="dropdown-container">
+          <Dropdown
+            key={house.id}
+            dropTitle="description"
+            dropDetails={<h4>{house.description}</h4>}
+          />
+        </div>
+        <div className="dropdown-container">
+          <Dropdown
+            key={house.id}
+            dropTitle="équipements"
+            dropDetails={equip.map((equipment, index) => {
+              return (
+                <ul>
+                  <li key={index}>{equipment}</li>
+                </ul>
+              );
+            })}
+          />
+        </div>
       </div>
-      <Footer />
     </div>
   );
 };

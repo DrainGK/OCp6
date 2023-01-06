@@ -5,7 +5,7 @@ const Navigation = () => {
   return (
     <div className="navigation">
       <div className="logo">
-        <img src="./kasa-logo.svg" alt="kasa-logo" />
+        <img src="/kasa-logo.svg" alt="kasa-logo" />
       </div>
 
       <ul>

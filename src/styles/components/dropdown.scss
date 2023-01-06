@@ -1,0 +1,34 @@
+.dropdown{
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: column;
+        font-weight: lighter;
+        margin: 0 auto;
+        width: 80%;
+        margin-bottom: 20px;
+
+        .dropdown-button{
+            font-size: 1rem;
+            color: white;
+            padding: 1em;
+            background-color: #FF6060;
+            border-radius: 2px;
+            width: 100%;
+            height: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;            
+            }
+
+            .dropdown-details{
+                background-color: #F6F6F6;
+                width: 100%;
+            }
+            .drop-details{
+                padding: 2rem;
+                color: #FF6060;
+            }
+            
+}

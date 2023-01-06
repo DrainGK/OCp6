@@ -1,0 +1,101 @@
+.rent{
+    display: flex;
+    flex-direction: column;
+    // align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+
+    width: 100%;
+
+    .rent-container{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 95%;
+        margin: 0 auto;
+        margin-bottom: 1em;
+
+        color: #FF6060;
+
+        @media only screen and (max-width: 376px){
+            display: block;
+        }
+        .house-info{
+
+            .title{
+                font-size: 2rem;
+                margin-bottom: 0.3em;
+                @media only screen and (max-width: 376px){
+                    font-size: 1rem;
+                }
+            }
+
+            .sub-title{
+                margin-bottom: 1.5em;
+                @media only screen and (max-width: 376px){
+                    font-size: 0.8rem;
+                }
+            }
+
+            .tags{
+                color: whitesmoke;
+                background: #FF6060;
+
+                border-radius: 10px;
+                padding: 10px;
+                @media only screen and (max-width: 376px){
+                    font-size: 0.8rem;
+                    padding: 5px;
+                }
+            }
+            
+        }
+
+        .owner{
+
+            @media only screen and (max-width: 376px){
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+
+            .owner-infos{
+                display: flex;
+                align-items: center;
+                margin: 0;
+                padding: 0;
+
+                p{
+                    line-break: auto;
+                    width: 50px;
+
+                }
+                img {
+                    transform: scale(0.5);
+                    border-radius: 50%;
+                }
+            }
+        }
+
+    }
+
+    .rent-info{
+
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        margin: 0 auto;
+
+        @media only screen and (max-width: 376px){
+            display: block;
+        }
+        
+        .dropdown-container{
+            width: 100%;
+            margin: 0 auto;
+        }
+    }
+
+}
