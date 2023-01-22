@@ -5,8 +5,8 @@ import Stars from "./Stars";
 
 const Rent = (props) => {
   const { house } = props;
-  const [equip, setEquip] = useState([house.equipments]);
-  const [tags, setTags] = useState([house.tags]);
+  const [equip, setEquip] = useState(house.equipments);
+  const [tags, setTags] = useState(house.tags);
 
   return (
     <div className="rent">
