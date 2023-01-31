@@ -7,6 +7,7 @@ const Rent = (props) => {
   const { house } = props;
   const [equip, setEquip] = useState(house.equipments);
   const [tags, setTags] = useState(house.tags);
+<<<<<<< HEAD
   const getEquipements = (equip) => {
     return (
       <ul>
@@ -16,6 +17,8 @@ const Rent = (props) => {
       </ul>
     );
   };
+=======
+>>>>>>> 7068c2d07e7171189a12e782edc4f6fd2693406d
 
   return (
     <div className="rent">
