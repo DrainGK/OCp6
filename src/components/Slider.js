@@ -32,6 +32,11 @@ const Slider = ({ slides }) => {
             key={index}
           >
             {index === slideIndex && <img src={obj} className="image" />}
+            <div className="number-slide">
+              <p>
+                {index + 1}/{length}
+              </p>
+            </div>
           </div>
         );
       })}

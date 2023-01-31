@@ -9,11 +9,21 @@
 .image {
   width: 1100px;
   height: 415px;
+  position: relative;
   border-radius: 10px;
   @media only screen and (max-width: 376px){
     width: 335px;
     height: 255px;
 }
+}
+
+.number-slide{
+  position: absolute;
+  left: 50%;
+  bottom: 10%;
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: rgb(255, 255, 255);
 }
 
 .right-arrow {

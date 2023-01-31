@@ -1,8 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Card = (props) => {
   const { house } = props;
+  console.log(props);
   return (
     <div className="card">
       <div className="card-container" key={house.id}>

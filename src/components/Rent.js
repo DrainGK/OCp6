@@ -5,8 +5,17 @@ import Stars from "./Stars";
 
 const Rent = (props) => {
   const { house } = props;
-  const [equip, setEquip] = useState([house.equipments]);
-  const [tags, setTags] = useState([house.tags]);
+  const [equip, setEquip] = useState(house.equipments);
+  const [tags, setTags] = useState(house.tags);
+  const getEquipements = (equip) => {
+    return (
+      <ul>
+        {equip.map((equipment, index) => {
+          return <li key={index}>{equipment}</li>;
+        })}
+      </ul>
+    );
+  };
 
   return (
     <div className="rent">
@@ -49,13 +58,7 @@ const Rent = (props) => {
           <Dropdown
             key={house.id}
             dropTitle="équipements"
-            dropDetails={equip.map((equipment, index) => {
-              return (
-                <ul>
-                  <li key={index}>{equipment}</li>
-                </ul>
-              );
-            })}
+            dropDetails={getEquipements(equip)}
           />
         </div>
       </div>
